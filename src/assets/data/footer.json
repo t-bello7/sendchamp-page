@@ -1,0 +1,173 @@
+[
+    {
+        "id": "dfwe3",
+        "name": "Products",
+        "data": [
+            {
+                "id" : "rfw3",
+                "name": "Channels/Router",
+                "link": "#"
+            },
+            {
+                "id" : "rfw3",
+                "name": "Channels/Router",
+                "link": "#"
+            }, 
+            {
+                "id" : "rfw3",
+                "name": "Verfication",
+                "link": "#"
+            }
+        ]
+    },
+    {
+        "id": "32de",
+        "name":  "Solutions",
+        "data": [
+            {
+                "id" : "rfwe3",
+                "name": "Onboard",
+                "link": "#"
+            },
+            {
+                "id" : "rfw3e",
+                "name": "Engage",
+                "link": "#"
+            }, 
+            {
+                "id" : "rfwwe3",
+                "name": "Support",
+                "link": "#"
+            },
+            {
+                "id": "ewf3",
+                "name": "Retain",
+                "link": "#"
+            }
+        ]
+    },
+    {
+        "id": "d32d32",
+        "name": "Resources",
+        "data" : [
+            {
+                "id" : "rfwece3",
+                "name": "Developers",
+                "link": "#"
+            },
+            {
+                "id" : "rfw3e3",
+                "name": "Api Reference",
+                "link": "#"
+            }, 
+            {
+                "id" : "rfwwe3d23",
+                "name": "Guides",
+                "link": "#"
+            },
+            {
+                "id": "ewf33c",
+                "name": "SDKs/Libraries",
+                "link": "#"
+            },
+            {
+                "id": "ewf3we3",
+                "name": "Community",
+                "link": "#"
+            },
+            {
+                "id": "ewfdaw3",
+                "name": "Status Page",
+                "link": "#"
+            },
+            {
+                "id": "ewfwqqd33",
+                "name": "Pricing",
+                "link": "#"
+            }
+        ]
+    },
+    {
+        "id": "32w2de",
+        "name":  "Company",
+        "data": [
+            {
+                "id" : "rfwe3q32",
+                "name": "About Us",
+                "link": "#"
+            },
+            {
+                "id" : "rfw3e21dd",
+                "name": "Our Stories",
+                "link": "#"
+            }, 
+            {
+                "id" : "rfww211ee3",
+                "name": "Careers",
+                "link": "#"
+            },
+            {
+                "id": "22dewf3",
+                "name": "Contact",
+                "link": "#"
+            },
+            {
+                "id": "22dsw23",
+                "name": "Terms Of Use",
+                "link": "#"
+            },
+            {
+                "id": "22dddwf3",
+                "name": "Privacy",
+                "link": "#"
+            }
+        ]
+    },
+    {
+        "id": "3e32r2de",
+        "name":  "Follow US",
+        "data": [
+            {
+                "id" : "rfwedw233",
+                "name": "Twitter",
+                "link": "#"
+            },
+            {
+                "id" : "rfw3ew2e",
+                "name": "Linkedin",
+                "link": "#"
+            }, 
+            {
+                "id" : "rfww23eadew3",
+                "name": "Facebook",
+                "link": "#"
+            },
+            {
+                "id": "ewf21sdd3",
+                "name": "Instagram",
+                "link": "#"
+            }
+        ]
+    },
+    {
+        "id": "32wfd2de",
+        "name":  "Contact US",
+        "data": [
+            {
+                "id" : "rfwe3we22",
+                "name": "+234(0)18880261",
+                "link": "https://www.sendchamp.com/tel:+234(0)18880261"
+            },
+            {
+                "id" : "rfw3e",
+                "name": "sales@sendchamp.com",
+                "link": "mailto:sales@sendchamp.com"
+            }, 
+            {
+                "id" : "rfwwe3",
+                "name": "help@sendchamp.com",
+                "link": "mailto:help@sendchamp.com"
+            }
+        ]
+    }
+]

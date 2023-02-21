@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme, theme as base } from '@chakra-ui/react'
 import { RecoilRoot } from 'recoil'
 import App from './App'
+import "./assets/styles/main.css"
+
 
 const colors = {
   brand: {
@@ -10,6 +12,10 @@ const colors = {
     800: '#153e75',
     700: '#2a69ac',
   },
+  fonts: {
+    heading: `the, ${base.fonts?.heading}`,
+    body: ` DM Sans , ${base.fonts?.body}`
+  }
 }
 
 const theme = extendTheme({ colors })

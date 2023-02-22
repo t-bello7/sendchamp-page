@@ -1,29 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ChakraProvider, extendTheme, theme as base } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import { RecoilRoot } from 'recoil'
 import App from './App'
 import "./assets/styles/main.css"
+import customTheme from "./theme/index";
 
-
-const colors = {
-  brand: {
-    900: 'yellow',
-    800: '#153e75',
-    700: '#2a69ac',
-  },
-  fonts: {
-    heading: `the, ${base.fonts?.heading}`,
-    body: ` DM Sans , ${base.fonts?.body}`
-  }
-}
-
-const theme = extendTheme({ colors })
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RecoilRoot>
-      <ChakraProvider theme={theme}>
+      <ChakraProvider theme={customTheme}>
         <App />
       </ChakraProvider>
     </RecoilRoot>

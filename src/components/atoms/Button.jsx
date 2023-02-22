@@ -1,5 +1,7 @@
-const Button = () => {
-    return <div> Button </div>
+import { Button } from "@chakra-ui/react"
+
+const CustomButton = () => {
+    return <Button> Button </Button>
 }
 
-export default Button;
+export default CustomButton;

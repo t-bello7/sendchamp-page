@@ -1,12 +1,10 @@
 import Price from "./Price"
+import { Box } from "@chakra-ui/react"
 const PricesBox = () => {
     return (
-        <div data-aos="fade-up">
+        <Box mt={10} mb={32} px={8} data-aos="fade-up">
             <Price />
-            <div>
-                Prices
-            </div>
-        </div>
+        </Box>
     )
 }
 

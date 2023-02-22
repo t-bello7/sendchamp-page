@@ -9,17 +9,104 @@
     {
         "id": "edd21",
         "name": "developers",
-        "data": []
+        "data": [
+            {
+                "id": "243fq3dx",
+                "name": "API Reference",
+                "link": "#" 
+            },
+            {
+                "id": "xc243f",
+                "name": "Tutorials",
+                "link": "#" 
+             },
+             {
+                "id": "xx3e243f",
+                "name": "Guides",
+                "link": "#" 
+             },
+             {
+                "id": "243f22z",
+                "name": "SDKs/Libraries",
+                "link": "#" 
+             },
+             {
+                "id": "243f",
+                "name": "Community",
+                "link": "#" 
+             },
+             {
+                "id": "243f",
+                "name": "Status Page",
+                "link": "#" 
+             }
+        ]
     },
     {
         "id": "cce2",
         "name": "company",
-        "data": []
+        "data": [
+        {
+           "id": "243f",
+           "name": "About Sendchamp",
+           "link": "#" 
+        },
+        {
+            "id": "f32c3",
+            "name": "Customers",
+            "link": "#"
+        },
+        {
+            "id": "2d24",
+            "name": "Our Blog",
+            "link": "#"
+        }, 
+        {
+            "id": "2d3rf2",
+            "name": "Careers",
+            "link": "#"
+        },
+        {
+            "id": "2f2f2f4",
+            "name": "Contact",
+            "link": "#"
+        },
+        {
+            "id": "2f2d1",
+            "name": "Support",
+            "link": "#"
+        }
+        ]
     },
     {
         "id": "we23",
         "name": "use cases",
-        "data": []
+        "data": [
+            {
+                "id": "2432wdf",
+                "name": "For Developers",
+                "link": "#" 
+             },
+             {
+                "id": "2432wde2df",
+                "name": "For Markerters",
+                "link": "#" 
+             },
+             {
+                "id": "24323w3cf",
+                "name": "For Creators",
+                "link": "#" 
+             },
+             {
+                "id": "2wd2d2df",
+                "name": "For Startups", 
+                "link": "#" 
+             },
+             {
+                "id": "24312df",
+                "name": "For Enterprise",
+                "link": "#" 
+             }]
     },
     {
         "id": "3d21d",

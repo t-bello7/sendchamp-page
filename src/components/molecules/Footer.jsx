@@ -1,17 +1,18 @@
-import {UnorderedList, ListItem, Box, Container, Flex, Text, Heading } from "@chakra-ui/react";
+import {UnorderedList, ListItem, Box, Container, Flex, Text, Heading, Grid } from "@chakra-ui/react";
 import footerData from "../../assets/data/footer.json"
 
 const Footer = () => {
     return (
         <Box bg="brand.700" color="white" pt={20}>
-            <Container display="grid" gridGap={5} gridAutoFlow="row dense" gridTemplateColumns="repeat(2, minmax(0, 1fr))">
+            <Container display="grid" gridGap={5} gridAutoFlow="row dense" gridTemplateColumns="repeat(auto-fill, 186px)">
             {
-                footerData.map( element => ( <div key={element?.id}>
+                footerData.map( element => (
+                    <div key={element?.id}>
                         <Heading color="gray" size="sm" fontWeight="light"> {element?.name} </Heading>
                         <UnorderedList m={0} mt={4}>
                         {
                             element.data.map(el => (
-                                < ListItem key={el.id} textDecoration="none" listStyleType="none" >
+                                < ListItem key={el.id} textDecoration="none" listStyleType="none">
                                     {el.name}
                                 </ ListItem>
                             ))

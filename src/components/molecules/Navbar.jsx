@@ -1,7 +1,17 @@
 import { useRef } from "react";
 import {
+    Link,
+    Text,
     Flex,
+    UnorderedList,
+    ListItem,
     Button,
+    Popover,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverHeader,
+    PopoverBody,
+    PopoverArrow,
     Accordion,
     AccordionItem,
     AccordionButton,
@@ -31,7 +41,51 @@ const Navbar = () => {
         <Box bg="brand.900">
             <Container data-aos="flip-left">
                 <Flex zIndex={2} py={6} px={8} justify="space-between">
-                    <Logo />
+                    <Flex>
+                        <Link href="/" minWidth="238px">
+                            <Logo />
+                        </Link>
+                        <UnorderedList display={{base: "none", md:"flex"}} alignItems="center" gap={2}>
+                            {
+                                headerData.map( element => (
+                                    <ListItem key={element.id} textDecoration="none" listStyleType="none">
+                                        {
+                                            element.data.length ? 
+                                            (
+                                                <Popover
+                                                trigger="hover"
+                                            >
+                                                <PopoverTrigger>
+                                                    <Button>{element.name}</Button>
+                                                </PopoverTrigger>
+                                                <PopoverContent>
+                                                    <PopoverHeader>{element.name}</PopoverHeader>
+                                                    <PopoverBody display="flex" flexDirection="column">
+                                                        { element?.data.map(el => (
+                                                            <Link>
+                                                                {el.name}
+                                                            </Link>
+                                                        ))}
+                                                    </PopoverBody>
+                                                </PopoverContent>
+                                            </Popover>
+                                            ): (
+                                                <Text>{element.name} </Text>
+                                            )
+                                        }
+                                    
+                                       
+                                    </ListItem>
+                                ))
+                            }
+                        </UnorderedList>
+                    </Flex>
+                    <Flex display={{base: "none", md:"flex"}}>
+                        <Button>Login</Button>
+                        <Button colorScheme="blue"> Get Started </Button>
+                        <Text as="span">🇳🇬</Text>
+                    </Flex>
+
                     <Button
                         _focus={{
                             border: "1px",
@@ -44,16 +98,18 @@ const Navbar = () => {
                         fontWeight="semibold"
                         outline="none"
                         bg="none"
+	    		        display={{ md: "none"}}
                     >
                         <MenuIcon />
                     </Button>
                 </Flex>
                 <Drawer
-                    isOpen={isOpen}
-                    placement='bottom'
-                    onClose={onClose}
-                    finalFocusRef={btnRef}
-                    size="lg"
+	    		isOpen={isOpen}
+	    		placement='bottom'
+	    		onClose={onClose}
+	    		finalFocusRef={btnRef}
+	    		size="lg"
+	    		display={{ md: "none"}}
                 >
                     <DrawerOverlay />
                     <DrawerContent>

@@ -6,6 +6,8 @@ const customTheme = extendTheme({
         900: '#EEF4FF',
         800: '#1A7EEf',
         700: 'hsl(211,66%,15%)',
+        600: '#509DF3',
+        500: '#A3CBF9'
     }
   },
   fonts: {

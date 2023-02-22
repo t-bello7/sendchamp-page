@@ -28,6 +28,7 @@ import {
     DrawerCloseButton,
     useDisclosure
 } from "@chakra-ui/react"
+import { v4 as uuidv4 } from 'uuid';
 import { ReactComponent as Logo } from "../../assets/images/nav_logo.svg";
 import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
@@ -48,7 +49,7 @@ const Navbar = () => {
                         <UnorderedList display={{base: "none", md:"flex"}} alignItems="center" gap={2}>
                             {
                                 headerData.map( element => (
-                                    <ListItem key={element.id} textDecoration="none" listStyleType="none">
+                                    <ListItem key={uuidv4()} textDecoration="none" listStyleType="none">
                                         {
                                             element.data.length ? 
                                             (
@@ -62,7 +63,7 @@ const Navbar = () => {
                                                     <PopoverHeader>{element.name}</PopoverHeader>
                                                     <PopoverBody display="flex" flexDirection="column">
                                                         { element?.data.map(el => (
-                                                            <Link>
+                                                            <Link key={uuidv4()}>
                                                                 {el.name}
                                                             </Link>
                                                         ))}
@@ -72,9 +73,7 @@ const Navbar = () => {
                                             ): (
                                                 <Text>{element.name} </Text>
                                             )
-                                        }
-                                    
-                                       
+                                        }                                      
                                     </ListItem>
                                 ))
                             }

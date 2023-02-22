@@ -1,0 +1,23 @@
+[
+    {
+        "base_code": "USD",
+        "conversion_rates": {
+            "AED": 3.67,
+            "NGN": 460.47
+        }
+    },
+    {
+        "base_code": "NGN",
+        "conversion_rates": {
+            "USD": 0.0022,
+            "AED": 0.0080
+        }
+    }, 
+    {
+        "base_code": "AED",
+        "conversion_rates": {
+            "NGN": 125.37,
+            "USD": 0.27
+        }
+    }
+]

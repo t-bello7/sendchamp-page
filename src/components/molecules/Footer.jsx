@@ -1,4 +1,13 @@
-import {UnorderedList, ListItem, Box, Container, Flex, Text, Heading, Grid } from "@chakra-ui/react";
+import {
+    UnorderedList,
+    ListItem,
+    Box,
+    Container,
+    Flex,
+    Text,
+    Heading,
+    Grid } from "@chakra-ui/react";
+import { v4 as uuidv4 } from 'uuid';
 import footerData from "../../assets/data/footer.json"
 
 const Footer = () => {
@@ -12,7 +21,7 @@ const Footer = () => {
                         <UnorderedList m={0} mt={4}>
                         {
                             element.data.map(el => (
-                                < ListItem key={el.id} textDecoration="none" listStyleType="none">
+                                < ListItem key={uuidv4()} textDecoration="none" listStyleType="none">
                                     {el.name}
                                 </ ListItem>
                             ))

@@ -1,19 +1,33 @@
-import { Heading, Box, Text, Flex } from "@chakra-ui/react" 
+import { Heading, Box, Text, Flex, Badge } from "@chakra-ui/react" 
 import IconBox from "../atoms/IconBox"
-const Price = () => {
+const Price = (props) => {
+    const {name, unit, sendPrice, recievePrice } = props
     return  (
-    <Flex gap={5} flexDirection="column" px={5} py={10} border='1px' borderRadius={12} borderColor="brand.800">
+    <Flex gap={5} flexDirection="column" px={5} py={10} border='1px' borderRadius={12} borderColor="brand.500">
         <IconBox />
 
-        <Heading> SMS </Heading>
+        <Heading> {name} </Heading>
         <Flex justify="space-between">
         <Box> 
             <Text>To make Calls</Text>
-            <Text as="span"> <Text as="span" fontWeight="bold">NGN 217.000</Text>/sec</Text>
+            <Text as="span"> <Text as="span" fontWeight="bold">NGN {sendPrice}</Text>/{unit}</Text>
         </Box>
         <Box>
             <Text>To make Calls</Text>
-            <Text as="span"> Coming Soon</Text>
+
+            { recievePrice ? (
+                <Text as="span"> <Text as="span" fontWeight="bold">NGN {recievePrice}</Text>/{unit}</Text>
+            ) : (
+                <Badge as="span"
+                bg="brand.900"
+                color="brand.600"
+                px={3}
+                py={1}
+                fontWeight="light"
+                borderRadius="full"
+                fontSize="xs"> Coming Soon</Badge>
+            )}
+            
         </Box>
         </Flex>
     </Flex>

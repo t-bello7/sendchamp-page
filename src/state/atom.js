@@ -1,5 +1,5 @@
 import { atom } from "recoil"
-import priceData from "../assets/data/prices.json"
+import { priceData } from "../assets/data/prices"
 
 export const priceState = atom({
     key: 'priceState',

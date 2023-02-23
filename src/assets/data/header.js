@@ -1,27 +1,42 @@
-[
+import smsUrl from "../icons/sms.svg?url"
+import emailUrl from "../icons/email.svg?url"
+import whatsappUrl from "../icons/whatsapp.svg?url"
+import voiceUrl from "../icons/call.svg?url"
+import apiUrl from "../icons/code-chat.svg?url"
+import tutorialUrl from "../icons/tutorial.svg?url"
+import guideUrl from "../icons/guide.svg?url"
+import bookUrl from "../icons/book.svg?url"
+import statusUrl from "../icons/status.svg?url"
+
+export const headerData = [
     {
         "id": "dwfwcr",
         "name": "products",
-        "data": [{
+        "data": [
+            {
                 "id": "243fq3dx21w",
                 "name": "SMS",
-                "link": "#" 
+                "link": "#",
+                "icon": smsUrl
             },
             {
                 "id": "243fq3dw12x",
                 "name": "Email",
-                "link": "#" 
+                "link": "#",
+                "icon": emailUrl 
             },
             {
                 "id": "243fq3d11x",
                 "name": "Whatapp",
-                "link": "#" 
+                "link": "#",
+                "icon": whatsappUrl 
             },
             {
                 "id": "243fq3s1dx",
                 "name": "Voice",
-                "link": "#" 
-            }
+                "link": "#",
+                "icon": voiceUrl
+            }   
         ]
     },
     {
@@ -31,32 +46,38 @@
             {
                 "id": "243fq3dx",
                 "name": "API Reference",
-                "link": "#" 
+                "link": "#",
+                "icon": apiUrl
             },
             {
                 "id": "xc243f",
                 "name": "Tutorials",
-                "link": "#" 
+                "link": "#",
+                "icon": tutorialUrl
              },
              {
                 "id": "xx3e243f",
                 "name": "Guides",
-                "link": "#" 
+                "link": "#",
+                "icon": guideUrl
              },
              {
                 "id": "243f22z",
                 "name": "SDKs/Libraries",
-                "link": "#" 
+                "link": "#",
+                "icon": voiceUrl
              },
              {
                 "id": "243f",
                 "name": "Community",
-                "link": "#" 
+                "link": "#",
+                "icon": bookUrl
              },
              {
                 "id": "243f",
                 "name": "Status Page",
-                "link": "#" 
+                "link": "#",
+                "icon": statusUrl
              }
         ]
     },
@@ -82,11 +103,6 @@
         {
             "id": "2d3rf2",
             "name": "Careers",
-            "link": "#"
-        },
-        {
-            "id": "2f2f2f4",
-            "name": "Contact",
             "link": "#"
         },
         {

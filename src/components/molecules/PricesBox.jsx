@@ -6,15 +6,19 @@ import Price from "./Price"
 
 const PricesBox = () => {
     const [price] = useRecoilValue(filteredPriceState);
+
     return (
-        <Grid
-            mt={10}
+            <Grid
+            mt={{base: 10, md: -16}}
             mb={32}
             px={8}
             gap={8}
             gridTemplateColumns="repeat(auto-fill, minmax(0, 25rem))"
-            data-aos="fade-up">
-         
+            justifyContent="center"
+            // justifyItems="center"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            zIndex="3">
             {
                 price.prices.map( element => (
                     <Price key={element.id}

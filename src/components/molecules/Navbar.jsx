@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import {
+    Image,
     Link,
     Text,
     Flex,
@@ -11,14 +12,12 @@ import {
     PopoverContent,
     PopoverHeader,
     PopoverBody,
-    PopoverArrow,
     Accordion,
     AccordionItem,
     AccordionButton,
     AccordionPanel,
     AccordionIcon,
     Box,
-    Container,
     Drawer,
     DrawerBody,
     DrawerFooter,
@@ -26,52 +25,82 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-    useDisclosure
+    useDisclosure,
 } from "@chakra-ui/react"
 import { v4 as uuidv4 } from 'uuid';
 import { ReactComponent as Logo } from "../../assets/images/nav_logo.svg";
 import { ReactComponent as MenuIcon } from "../../assets/icons/menu.svg";
-import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
-import headerData from "../../assets/data/header.json"
+import { headerData }from "../../assets/data/header.js"
 
 
 const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
     return (
-        <Box bg="brand.900">
-            <Container data-aos="flip-left">
+        <Box bg="brand.900" px={{base:8, md:32}}>
                 <Flex zIndex={2} py={6} px={8} justify="space-between">
                     <Flex>
                         <Link href="/" minWidth="238px">
                             <Logo />
                         </Link>
-                        <UnorderedList display={{base: "none", md:"flex"}} alignItems="center" gap={2}>
+                        <UnorderedList display={{base: "none", md:"flex"}} alignItems="center">
                             {
                                 headerData.map( element => (
-                                    <ListItem key={uuidv4()} textDecoration="none" listStyleType="none">
-                                        {
-                                            element.data.length ? 
-                                            (
-                                                <Popover
+                                    <ListItem key={uuidv4()} textDecoration="none" mr={12} listStyleType="none">
+                                        {element.data.length ? 
+                                            (<Popover
                                                 trigger="hover"
-                                            >
+                                                openDelay={10}
+                                                >
                                                 <PopoverTrigger>
-                                                    <Button>{element.name}</Button>
+                                                    <Button fontWeight="normal" textTransform="capitalize">{element.name}</Button>
                                                 </PopoverTrigger>
-                                                <PopoverContent>
-                                                    <PopoverHeader>{element.name}</PopoverHeader>
-                                                    <PopoverBody display="flex" flexDirection="column">
-                                                        { element?.data.map(el => (
-                                                            <Link key={uuidv4()}>
+                                                <Box zIndex="popover">
+                                                    <PopoverContent
+                                                        px={8} pt={6} pb={10} borderRadius={12}>
+                                                    <PopoverHeader
+                                                        borderBottom="none"
+                                                        textTransform="uppercase"
+                                                        color="gray"
+                                                        fontSize="xs"
+                                                    >{element.name}</PopoverHeader>
+                                                    <PopoverBody
+                                                        display="flex"
+                                                        flexDirection="column"
+                                                        alignItems="start"
+                                                        fontSize="xs"
+                                                        gap={3}
+                                                        >
+                                                        { element?.data.map(el => {
+                                                        
+                                                            if (el.icon) return (
+                                                                <Link key={uuidv4()}>
+                                                                    <Flex>
+                                                                        <Image
+                                                                        boxSize='24px'
+                                                                        objectFit='cover'
+                                                                        mr={3}
+                                                                        src={el.icon} alt="icon"
+                                                                        /> 
+                                                                        <Text ml={2}>
+                                                                            {el.name}
+                                                                        </Text>
+                                                                    </Flex>
+                                                                </Link>
+                                                            )
+                                                            return (
+                                                                <Link key={uuidv4()}>
                                                                 {el.name}
                                                             </Link>
-                                                        ))}
+                                                            )
+                                                        }
+                                                        )}
                                                     </PopoverBody>
                                                 </PopoverContent>
+                                                </Box>
                                             </Popover>
                                             ): (
-                                                <Text>{element.name} </Text>
+                                                <Text  textTransform="capitalize">{element.name} </Text>
                                             )
                                         }                                      
                                     </ListItem>
@@ -79,9 +108,9 @@ const Navbar = () => {
                             }
                         </UnorderedList>
                     </Flex>
-                    <Flex display={{base: "none", md:"flex"}}>
+                    <Flex gap={3} display={{base: "none", md:"flex"}} alignItems="center">
                         <Button>Login</Button>
-                        <Button colorScheme="blue"> Get Started </Button>
+                        <Button bg="brand.800" color="white"> Get Started </Button>
                         <Text as="span">🇳🇬</Text>
                     </Flex>
 
@@ -107,52 +136,98 @@ const Navbar = () => {
 	    		placement='bottom'
 	    		onClose={onClose}
 	    		finalFocusRef={btnRef}
-	    		size="lg"
+	    		size="full"
 	    		display={{ md: "none"}}
                 >
                     <DrawerOverlay />
                     <DrawerContent>
-                        <DrawerCloseButton />
-                        <DrawerHeader>
-                         Send Champ
+                        <DrawerHeader display="flex" justifyContent="space-between"py={6} px={10} >
+                            <Logo />
+                            <DrawerCloseButton
+                             _focus={{
+                                border: "1px",
+                                borderRadius: "8px",
+                                borderColor: "blue"
+                            }}
+                            position="static"
+                            fontWeight="semibold"
+                            outline="none"
+                            />
                         </DrawerHeader>
-
                         <DrawerBody>
                             <Accordion allowToggle>
                                 {
-                                    headerData.map(element => (
+                                    headerData.map(element => { 
+                                        if (!element.data.length){
+                                            return (<Box 
+                                            key={uuidv4()}
+                                            py={6} px={5} textTransform="uppercase" fontWeight="thin">
+                                            {element.name}
+                                            </Box>)
+                                        }
+                                        return(
                                         <AccordionItem key={element.id}>
-                                        <h2>
-                                            <AccordionButton>
-                                                    <Box as="span" flex='1' textAlign='left'>
+                                            <AccordionButton justifyContent="space-between" py={6} px={5}   >
+                                                    <Box as="span" textTransform="uppercase" fontWeight="thin">
                                                     {element.name}
                                                     </Box>
-                                                    <AccordionIcon />
-                                                    <AccordionPanel pb={4}>
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                                        commodo consequat.
-                                                    </AccordionPanel>
+                                                    <AccordionIcon fontSize="32px" fontWeight="thin" />
                                             </AccordionButton>
-                                        </h2>
+                                            <AccordionPanel
+                                                pb={4}
+                                                display="grid"
+                                                gap={8}
+                                                py={8}
+                                                px={5}
+                                                bg="brand.900"
+                                                gridTemplateColumns="repeat(2, minmax(0px, 1fr))">
+                                                 {
+                                                    element.data.map(el => (
+                                                        el.icon ? (
+                                                        <Flex key={uuidv4()}>
+                                                            <Image
+                                                            boxSize='24px'
+                                                            objectFit='cover'
+                                                            mr={3}
+                                                            src={el.icon} alt="icon"
+                                                            /> 
+                                                            <Text> {el.name }</Text>
+                                                        </Flex>
+                                                        ): (
+                                                        <Text key={uuidv4()}> {el.name }</Text>
+                                                        )
+                                                    ))
+                                                 }
+                                            </AccordionPanel>
                                         </AccordionItem>
-            
-                                    ))
+                                    )})
                                 }
                       
                             </Accordion>
                         </DrawerBody>
 
-                        <DrawerFooter flexDirection="column">
-                            <Button variant='outline' mr={3} onClick={onClose}>
+                        <DrawerFooter flexDirection="column" alignItems="center" gap={2}>
+                            <Button
+                                variant='outline'
+                                onClick={onClose}
+                                w="full"
+                                py={8}
+                                px="24px"
+                                >
                                 Login
                             </Button>
-                            <Button colorScheme='blue'>Get Started</Button>
+                            <Button
+                                bg="brand.800"
+                                w="full"
+                                py={8}
+                                color="white"
+                                px="24px"
+                                // outline=
+                            >Get Started
+                            </Button>
                         </DrawerFooter>
                     </DrawerContent>
                 </Drawer>
-            </Container>
         </Box>
     )
 }

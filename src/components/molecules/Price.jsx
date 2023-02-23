@@ -1,12 +1,16 @@
 import { Heading, Box, Text, Flex, Badge } from "@chakra-ui/react" 
 import IconBox from "../atoms/IconBox"
+
 const Price = (props) => {
     const {name, unit, sendPrice, recievePrice } = props
     return  (
-    <Flex gap={5} flexDirection="column" px={5} py={10} border='1px' borderRadius={12} borderColor="brand.500">
-        <IconBox />
+    <Flex bg="white" gap={5} flexDirection="column" px={5} py={10} border='1px' borderRadius={12} borderColor="brand.500">
+        <IconBox unit={unit}/>
 
-        <Heading> {name} </Heading>
+        <Heading
+            fontWeight="semibold"
+            fontSize="lg"
+        > {name} </Heading>
         <Flex justify="space-between">
         <Box> 
             <Text>To make Calls</Text>

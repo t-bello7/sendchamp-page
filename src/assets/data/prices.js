@@ -1,4 +1,4 @@
-[
+export const priceData = [
     {
         "id": "2334c3",
         "name": "Nigeria",
@@ -34,7 +34,7 @@
             "sendPrice": 0.00,
             "recievePrice": 0.700
         }
-        ]
+        ],
     },
     {
         "id": "2s334c3",
